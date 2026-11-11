@@ -1,0 +1,59 @@
+{
+    "name": "cypresslab/patch-manager",
+    "description": "A library to manage patch requests",
+    "keywords": ["rest", "patch", "api", "symfony", "bundle"],
+    "require": {
+        "php": "^8.3",
+        "ext-json": "*",
+        "symfony/property-access": "^6.0 || ^7.0 || ^8.0",
+        "symfony/http-foundation": "^6.0 || ^7.0 || ^8.0",
+        "symfony/options-resolver": "^6.0 || ^7.0 || ^8.0",
+        "symfony/dependency-injection": "^6.0 || ^7.0 || ^8.0",
+        "symfony/http-kernel": "^6.0 || ^7.0 || ^8.0",
+        "symfony/config": "^6.0 || ^7.0 || ^8.0",
+        "symfony/event-dispatcher": "^6.0 || ^7.0 || ^8.0",
+        "mattiabasone/phpcollection": "^1.0.0"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.70",
+        "phpunit/phpunit": "^12.5",
+        "mockery/mockery": "^1.4",
+        "yohang/finite": "^2.0",
+        "doctrine/orm": "^2.9",
+        "phpspec/prophecy-phpunit": "^2.3",
+        "phpstan/phpstan": "^2.0",
+        "phpstan/phpstan-doctrine": "^2.0",
+        "phpstan/phpstan-mockery": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Cypress\\PatchManager\\": "src/PatchManager/",
+            "Cypress\\PatchManager\\Tests\\": "tests/PatchManager/"
+        }
+    },
+    "license": "LGPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "Matteo Giachino",
+            "email": "matteog@gmail.com"
+        }
+    ],
+    "config": {
+        "bin-dir":"bin"
+    },
+    "minimum-stability": "stable",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "6.0.x-dev"
+        }
+    },
+    "suggest": {
+        "yohang/finite": "PatchManager with op 'state_machine'",
+        "doctrine/orm": "PatchManager with op 'data' and doctrine integration"
+    },
+    "scripts": {
+        "analyse": "bin/phpstan analyse -c phpstan.neon --ansi",
+        "format": "bin/php-cs-fixer fix --show-progress=dots --verbose --diff",
+        "test": "@php bin/phpunit"
+    }
+}

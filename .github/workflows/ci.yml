@@ -1,0 +1,127 @@
+name: Test
+
+on:
+  push:
+    branches: ["master"]
+  merge_group:
+  pull_request:
+    branches: ["master"]
+
+jobs:
+  test:
+
+    name: Test PHP ${{ matrix.php.version }} ${{ matrix.php.composer_flags }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php:
+          - version: '8.3'
+            composer_flags: --prefer-lowest
+          - version: '8.4'
+            composer_flags: --prefer-lowest
+          - version: '8.5'
+            composer_flags: --prefer-lowest
+          - version: '8.3'
+            composer_flags: --prefer-stable
+          - version: '8.4'
+            composer_flags: --prefer-stable
+          - version: '8.5'
+            composer_flags: --prefer-stable
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@eb7c497e18156a6bbabfef1d3a82760b9eda3962
+        with:
+          php-version: ${{ matrix.php.version }}
+          extensions: curl, mbstring, intl, libxml, simplexml
+          coverage: xdebug
+
+      - name: Get composer cache directory
+        id: composer-cache-dir
+        run: echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+
+      - name: Cache Composer packages
+        id: composer-cache-restore
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.composer-cache-dir.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ matrix.php.composer_flags }}-${{ hashFiles('**/composer.json') }}
+          restore-keys: ${{ runner.os }}-composer-${{ matrix.php.composer_flags }}-
+
+      - name: Install dependencies
+        run: (test -d vendor && echo vendor directory exists) || composer update ${{ matrix.php.composer_flags }} --no-progress --no-suggest
+
+      - name: Run PHPUnit
+        run: ./bin/phpunit --coverage-text --coverage-clover clover.xml
+
+  static-analysis:
+    name: Static Analysis
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@eb7c497e18156a6bbabfef1d3a82760b9eda3962
+        with:
+          php-version: 8.3
+          extensions: curl, mbstring, intl, libxml, simplexml
+
+      - name: Get composer cache directory
+        id: composer-cache
+        run: echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+
+      - name: Cache composer dependencies
+        uses: actions/cache@v6
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('*/composer.lock') }}
+          restore-keys: ${{ runner.os }}-composer-
+
+      - name: Install Composer dependencies
+        run: composer install --no-progress --prefer-dist --optimize-autoloader
+
+      - name: Run static analysis
+        run: vendor/bin/phpstan
+
+  lint:
+    name: PHP CS Fixer
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@eb7c497e18156a6bbabfef1d3a82760b9eda3962
+        with:
+          php-version: 8.3
+          extensions: curl, mbstring, intl, libxml, simplexml
+
+      - name: Get composer cache directory
+        id: composer-cache
+        run: echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+
+      - name: Cache composer dependencies
+        uses: actions/cache@v6
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('*/composer.lock') }}
+          restore-keys: ${{ runner.os }}-composer-
+
+      - name: Install Composer dependencies
+        run: composer install --no-progress --prefer-dist --optimize-autoloader
+
+      - name: Check code style
+        run: vendor/bin/php-cs-fixer fix --dry-run --show-progress=dots --verbose --diff
+
+  alls-green:
+    if: always()
+    runs-on: ubuntu-latest
+    needs:
+      - lint
+      - static-analysis
+      - test
+    steps:
+      - run: ${{ !contains(needs.*.result, 'failure') }}

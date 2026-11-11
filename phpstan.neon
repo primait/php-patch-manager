@@ -1,0 +1,11 @@
+includes:
+        - vendor/phpstan/phpstan-doctrine/extension.neon
+        - vendor/phpstan/phpstan-mockery/extension.neon
+
+parameters:
+    level: 6 #https://phpstan.org/user-guide/rule-levels
+    paths:
+        - src
+    ignoreErrors:
+        - '#no value type specified in iterable type#'
+        - '#Method Cypress\\PatchManager\\OperationMatcher::getUnmatchedOperations\(\) should return PhpCollection\\Sequence but returns PhpCollection\\AbstractSequence#'

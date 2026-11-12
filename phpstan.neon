@@ -3,8 +3,6 @@ includes:
         - vendor/phpstan/phpstan-mockery/extension.neon
 
 parameters:
-    level: 6 #https://phpstan.org/user-guide/rule-levels
+    level: 8
     paths:
         - src
-    ignoreErrors:
-        - '#no value type specified in iterable type#'

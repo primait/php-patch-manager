@@ -32,7 +32,7 @@ class Operations
         $operationsWithoutOpKey = $operations->filterNot(fn ($operationData) => array_key_exists(self::OP_KEY_NAME, $operationData));
 
         if (!$operationsWithoutOpKey->isEmpty()) {
-            /** @var array $operationData */
+            /** @var array<string, mixed> $operationData */
             $operationData = $operationsWithoutOpKey->first()->get();
 
             throw new MissingOperationNameRequest($operationData);
@@ -44,6 +44,7 @@ class Operations
     /**
      * @throws InvalidJsonRequestContent
      * @throws MissingOperationRequest
+     * @return array<string, mixed>
      */
     private function parseJson(?string $string): array
     {
@@ -65,6 +66,9 @@ class Operations
         }
     }
 
+    /**
+     * @param array<int|string, mixed> $operations
+     */
     private function toSequence(array $operations): Sequence
     {
         $operations = $this->isAssociative($operations) ? [$operations] : $operations;
@@ -72,6 +76,9 @@ class Operations
         return new Sequence($operations);
     }
 
+    /**
+     * @param array<int|string, mixed> $arr
+     */
     private function isAssociative(array $arr): bool
     {
         return array_keys($arr) !== range(0, count($arr) - 1);

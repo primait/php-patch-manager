@@ -29,13 +29,13 @@ class OperationMatcher
     }
 
     /**
-     * @param array|Patchable|\Traversable $subject a Patchable instance or a collection of instances
+     * @param iterable<Patchable>|Patchable $subject a Patchable instance or a collection of instances
      *
      * @throws Exception\MissingOperationNameRequest
      * @throws Exception\MissingOperationRequest
      * @throws Exception\InvalidJsonRequestContent
      */
-    public function getMatchedOperations($subject): Sequence
+    public function getMatchedOperations(iterable|Patchable $subject): Sequence
     {
         $handlers = $this->handlers;
 
@@ -44,11 +44,26 @@ class OperationMatcher
             ->foldLeft(
                 new Sequence(),
                 function (Sequence $matchedOperations, array $operationData) use ($handlers, $subject) {
-                    $handler = $handlers->find(fn (PatchOperationHandler $patchHandler) => $operationData[Operations::OP_KEY_NAME] === $patchHandler->getName());
+                    $handler = $handlers->find(static fn (PatchOperationHandler $patchHandler) => $operationData[Operations::OP_KEY_NAME] === $patchHandler->getName());
                     if ($handler->isDefined()) {
                         /** @var PatchOperationHandler $patchOperationHandler */
                         $patchOperationHandler = $handler->get();
-                        if ($patchOperationHandler->canHandle($subject)) {
+
+                        if (is_iterable($subject)) {
+                            $canHandleAll = true;
+                            foreach ($subject as $patchable) {
+                                if (false === $patchOperationHandler->canHandle($patchable)) {
+                                    $canHandleAll = false;
+
+                                    break;
+                                }
+                            }
+
+                            if ($canHandleAll) {
+                                $matchedOperations->add(MatchedPatchOperation::create($operationData, $patchOperationHandler));
+                            }
+
+                        } elseif ($patchOperationHandler->canHandle($subject)) {
                             $matchedOperations->add(MatchedPatchOperation::create($operationData, $handler->get()));
                         }
                     }
@@ -59,12 +74,12 @@ class OperationMatcher
     }
 
     /**
-     * @param array|Patchable|\Traversable $subject a Patchable instance or a collection of instances
+     * @param iterable<Patchable>|Patchable $subject a Patchable instance or a collection of instances
      * @throws Exception\InvalidJsonRequestContent
      * @throws Exception\MissingOperationNameRequest
      * @throws Exception\MissingOperationRequest
      */
-    public function getUnmatchedOperations($subject): AbstractSequence
+    public function getUnmatchedOperations(iterable|Patchable $subject): AbstractSequence
     {
         $matchedOperations = $this->getMatchedOperations($subject);
 

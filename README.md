@@ -1,10 +1,9 @@
 Patch Manager
 =============
-[![PHP Version](https://img.shields.io/packagist/php-v/cypresslab/patch-manager/dev-master)](https://packagist.org/packages/cypresslab/patch-manager)
-[![Code Coverage](https://scrutinizer-ci.com/g/matteosister/patch-manager/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/matteosister/patch-manager/?branch=master)
-[![Build Status](https://img.shields.io/github/actions/workflow/status/matteosister/patch-manager/php.yml?branch=master)](https://github.com/matteosister/patch-manager/actions)
-[![Packagist Version](https://img.shields.io/packagist/v/cypresslab/patch-manager)](https://packagist.org/packages/cypresslab/patch-manager)
-[![Packagist Downloads](https://img.shields.io/packagist/dt/cypresslab/patch-manager)](https://packagist.org/packages/cypresslab/patch-manager)
+[![PHP Version](https://img.shields.io/packagist/php-v/prima-assicurazioni/patch-manager/dev-master)](https://packagist.org/packages/prima-assicurazioni/patch-manager)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/primait/php-patch-manager/ci.yml?branch=master)](https://github.com/primait/php-patch-manager/actions)
+[![Packagist Version](https://img.shields.io/packagist/v/prima-assicurazioni/patch-manager)](https://packagist.org/packages/prima-assicurazioni/patch-manager)
+[![Packagist Downloads](https://img.shields.io/packagist/dt/prima-assicurazioni/patch-manager)](https://packagist.org/packages/prima-assicurazioni/patch-manager)
 
 A php library to manage PATCH requests in a standardized (and elegant) way
 

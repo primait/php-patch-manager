@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace Cypress\PatchManager\Tests;
+namespace PrimaAssicurazioni\PatchManager\Tests;
 
-use Cypress\PatchManager\Event\PatchManagerEvent;
-use Cypress\PatchManager\Exception\HandlerNotFoundException;
-use Cypress\PatchManager\MatchedPatchOperation;
-use Cypress\PatchManager\OperationMatcher;
-use Cypress\PatchManager\PatchManager;
-use Cypress\PatchManager\PatchOperationHandler;
-use Cypress\PatchManager\Request\Adapter;
-use Cypress\PatchManager\Request\Operations;
-use Cypress\PatchManager\Tests\FakeObjects\SubjectA;
 use PhpCollection\Sequence;
 use PHPUnit\Framework\Attributes\Test;
+use PrimaAssicurazioni\PatchManager\Event\PatchManagerEvent;
+use PrimaAssicurazioni\PatchManager\Exception\HandlerNotFoundException;
+use PrimaAssicurazioni\PatchManager\MatchedPatchOperation;
+use PrimaAssicurazioni\PatchManager\OperationMatcher;
+use PrimaAssicurazioni\PatchManager\PatchManager;
+use PrimaAssicurazioni\PatchManager\PatchOperationHandler;
+use PrimaAssicurazioni\PatchManager\Request\Adapter;
+use PrimaAssicurazioni\PatchManager\Request\Operations;
+use PrimaAssicurazioni\PatchManager\Tests\FakeObjects\SubjectA;
 use Prophecy\Argument;
 use Prophecy\Prophecy\ObjectProphecy;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;

@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-use Cypress\PatchManager\Bundle\RequestAdapter\RequestStackAdapter;
-use Cypress\PatchManager\OperationMatcher;
-use Cypress\PatchManager\PatchManager;
-use Cypress\PatchManager\Request\Operations;
+use PrimaAssicurazioni\PatchManager\Bundle\RequestAdapter\RequestStackAdapter;
+use PrimaAssicurazioni\PatchManager\OperationMatcher;
+use PrimaAssicurazioni\PatchManager\PatchManager;
+use PrimaAssicurazioni\PatchManager\Request\Operations;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 
 use function Symfony\Component\DependencyInjection\Loader\Configurator\service;

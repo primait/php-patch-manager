@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Cypress\PatchManager\Event;
+namespace PrimaAssicurazioni\PatchManager\Event;
 
 class PreHandlerInvocationEvent extends PatchManagerEvent
 {

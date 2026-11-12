@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Cypress\PatchManager\Request;
+namespace PrimaAssicurazioni\PatchManager\Request;
 
-use Cypress\PatchManager\Exception\InvalidJsonRequestContent;
-use Cypress\PatchManager\Exception\MissingOperationNameRequest;
-use Cypress\PatchManager\Exception\MissingOperationRequest;
 use PhpCollection\Sequence;
+use PrimaAssicurazioni\PatchManager\Exception\InvalidJsonRequestContent;
+use PrimaAssicurazioni\PatchManager\Exception\MissingOperationNameRequest;
+use PrimaAssicurazioni\PatchManager\Exception\MissingOperationRequest;
 
 class Operations
 {

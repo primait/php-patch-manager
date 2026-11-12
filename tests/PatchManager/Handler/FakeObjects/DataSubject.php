@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Cypress\PatchManager\Tests\Handler\FakeObjects;
+namespace PrimaAssicurazioni\PatchManager\Tests\Handler\FakeObjects;
 
-use Cypress\PatchManager\Patchable;
+use PrimaAssicurazioni\PatchManager\Patchable;
 
 class DataSubject implements Patchable
 {

@@ -1,5 +1,5 @@
 {
-    "name": "cypresslab/patch-manager",
+    "name": "prima-assicurazioni/patch-manager",
     "description": "A library to manage patch requests",
     "keywords": ["rest", "patch", "api", "symfony", "bundle"],
     "require": {
@@ -27,8 +27,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Cypress\\PatchManager\\": "src/PatchManager/",
-            "Cypress\\PatchManager\\Tests\\": "tests/PatchManager/"
+            "PrimaAssicurazioni\\PatchManager\\": "src/PatchManager/",
+            "PrimaAssicurazioni\\PatchManager\\Tests\\": "tests/PatchManager/"
         }
     },
     "license": "LGPL-3.0-or-later",
@@ -36,15 +36,16 @@
         {
             "name": "Matteo Giachino",
             "email": "matteog@gmail.com"
+        },
+        {
+            "name": "Mattia Basone",
+            "email": "mattia.basone@gmail.com"
         }
     ],
-    "config": {
-        "bin-dir":"bin"
-    },
     "minimum-stability": "stable",
     "extra": {
         "branch-alias": {
-            "dev-master": "6.0.x-dev"
+            "dev-master": "1.0.x-dev"
         }
     },
     "suggest": {
@@ -52,8 +53,9 @@
         "doctrine/orm": "PatchManager with op 'data' and doctrine integration"
     },
     "scripts": {
-        "analyse": "bin/phpstan analyse -c phpstan.neon --ansi",
-        "format": "bin/php-cs-fixer fix --show-progress=dots --verbose --diff",
-        "test": "@php bin/phpunit"
+        "analyse": "vendor/bin/phpstan analyse -c phpstan.neon --ansi",
+        "format": "vendor/bin/php-cs-fixer fix --show-progress=dots --verbose --diff",
+        "format-dry-run": "vendor/bin/php-cs-fixer fix --dry-run --show-progress=dots --verbose --diff",
+        "test": "vendor/bin/phpunit"
     }
 }

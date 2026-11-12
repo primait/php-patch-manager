@@ -84,7 +84,7 @@ jobs:
         run: composer install --no-progress --prefer-dist --optimize-autoloader
 
       - name: Run static analysis
-        run: vendor/bin/phpstan
+        run: composer analyse
 
   lint:
     name: PHP CS Fixer
@@ -114,7 +114,7 @@ jobs:
         run: composer install --no-progress --prefer-dist --optimize-autoloader
 
       - name: Check code style
-        run: vendor/bin/php-cs-fixer fix --dry-run --show-progress=dots --verbose --diff
+        run: composer format-dry-run
 
   alls-green:
     if: always()

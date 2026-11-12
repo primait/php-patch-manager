@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Cypress\PatchManager\Exception;
+namespace PrimaAssicurazioni\PatchManager\Exception;
 
-use PhpCollection\Sequence;
+use PhpCollection\AbstractSequence;
 
 class HandlerNotFoundException extends PatchManagerException
 {
-    public function __construct(Sequence $unmatchedOperations)
+    public function __construct(AbstractSequence $unmatchedOperations)
     {
         $message = 'No handler was found ';
         if ($unmatchedOperations->count() > 1) {

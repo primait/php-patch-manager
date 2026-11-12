@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Cypress\PatchManager\Tests\Bundle\RequestAdapter;
+namespace PrimaAssicurazioni\PatchManager\Tests\Bundle\RequestAdapter;
 
-use Cypress\PatchManager\Bundle\RequestAdapter\RequestStackAdapter;
-use Cypress\PatchManager\Request\Operations;
-use Cypress\PatchManager\Tests\PatchManagerTestCase;
 use PHPUnit\Framework\Attributes\Test;
+use PrimaAssicurazioni\PatchManager\Bundle\RequestAdapter\RequestStackAdapter;
+use PrimaAssicurazioni\PatchManager\Request\Operations;
+use PrimaAssicurazioni\PatchManager\Tests\PatchManagerTestCase;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 

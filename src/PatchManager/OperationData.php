@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Cypress\PatchManager;
+namespace PrimaAssicurazioni\PatchManager;
 
-use Cypress\PatchManager\Request\Operations;
 use PhpCollection\Map;
 use PhpCollection\Sequence;
 use PhpOption\Option;
+use PrimaAssicurazioni\PatchManager\Request\Operations;
 
 class OperationData extends Map
 {

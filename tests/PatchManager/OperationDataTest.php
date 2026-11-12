@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Cypress\PatchManager\Tests;
+namespace PrimaAssicurazioni\PatchManager\Tests;
 
-use Cypress\PatchManager\OperationData;
 use PhpCollection\Sequence;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\Attributes\Test;
+use PrimaAssicurazioni\PatchManager\OperationData;
 
 class OperationDataTest extends PatchManagerTestCase
 {

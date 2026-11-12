@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Cypress\PatchManager\Tests;
+namespace PrimaAssicurazioni\PatchManager\Tests;
 
-use Cypress\PatchManager\MatchedPatchOperation;
-use Cypress\PatchManager\OperationMatcher;
-use Cypress\PatchManager\Request\Operations;
-use Cypress\PatchManager\Tests\FakeObjects\SubjectA;
 use Mockery as m;
 use PhpCollection\Sequence;
 use PHPUnit\Framework\Attributes\Test;
+use PrimaAssicurazioni\PatchManager\MatchedPatchOperation;
+use PrimaAssicurazioni\PatchManager\OperationMatcher;
+use PrimaAssicurazioni\PatchManager\Request\Operations;
+use PrimaAssicurazioni\PatchManager\Tests\FakeObjects\SubjectA;
 
 class OperationMatcherTest extends PatchManagerTestCase
 {

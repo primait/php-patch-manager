@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Cypress\PatchManager\Handler;
+namespace PrimaAssicurazioni\PatchManager\Handler;
 
-use Cypress\PatchManager\OperationData;
-use Cypress\PatchManager\Patchable;
-use Cypress\PatchManager\PatchOperationHandler;
 use Finite\StateMachine;
+use PrimaAssicurazioni\PatchManager\OperationData;
+use PrimaAssicurazioni\PatchManager\Patchable;
+use PrimaAssicurazioni\PatchManager\PatchOperationHandler;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class FiniteHandler implements PatchOperationHandler

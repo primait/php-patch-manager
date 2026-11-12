@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Cypress\PatchManager\Request;
+namespace PrimaAssicurazioni\PatchManager\Request;
 
 /**
  * Interface Adapter

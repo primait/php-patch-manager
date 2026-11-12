@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Cypress\PatchManager\Tests\FakeObjects;
+namespace PrimaAssicurazioni\PatchManager\Tests\FakeObjects;
 
-use Cypress\PatchManager\Patchable as IPatchable;
+use PrimaAssicurazioni\PatchManager\Patchable as IPatchable;
 
 class SubjectB implements IPatchable
 {

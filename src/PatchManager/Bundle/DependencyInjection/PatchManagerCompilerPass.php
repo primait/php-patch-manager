@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Cypress\PatchManager\Bundle\DependencyInjection;
+namespace PrimaAssicurazioni\PatchManager\Bundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;

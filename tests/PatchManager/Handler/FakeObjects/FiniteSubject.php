@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Cypress\PatchManager\Tests\Handler\FakeObjects;
+namespace PrimaAssicurazioni\PatchManager\Tests\Handler\FakeObjects;
 
-use Cypress\PatchManager\Patchable;
 use Finite\State;
 use Finite\Transition\Transition;
+use PrimaAssicurazioni\PatchManager\Patchable;
 
 enum FiniteSubjectState: string implements State
 {

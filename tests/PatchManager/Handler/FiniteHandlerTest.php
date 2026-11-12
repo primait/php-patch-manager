@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace Cypress\PatchManager\Tests\Handler;
+namespace PrimaAssicurazioni\PatchManager\Tests\Handler;
 
-use Cypress\PatchManager\Handler\FiniteHandler;
-use Cypress\PatchManager\OperationData;
-use Cypress\PatchManager\Tests\Handler\FakeObjects\FiniteSubject;
-use Cypress\PatchManager\Tests\Handler\FakeObjects\FiniteSubjectState;
-use Cypress\PatchManager\Tests\PatchManagerTestCase;
 use Finite\Exception\TransitionNotReachableException;
 use Finite\StateMachine;
 use PHPUnit\Framework\Attributes\Test;
+use PrimaAssicurazioni\PatchManager\Handler\FiniteHandler;
+use PrimaAssicurazioni\PatchManager\OperationData;
+use PrimaAssicurazioni\PatchManager\Tests\Handler\FakeObjects\FiniteSubject;
+use PrimaAssicurazioni\PatchManager\Tests\Handler\FakeObjects\FiniteSubjectState;
+use PrimaAssicurazioni\PatchManager\Tests\PatchManagerTestCase;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class FiniteHandlerTest extends PatchManagerTestCase

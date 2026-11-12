@@ -8,4 +8,3 @@ parameters:
         - src
     ignoreErrors:
         - '#no value type specified in iterable type#'
-        - '#Method Cypress\\PatchManager\\OperationMatcher::getUnmatchedOperations\(\) should return PhpCollection\\Sequence but returns PhpCollection\\AbstractSequence#'

@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Cypress\PatchManager\Tests;
+namespace PrimaAssicurazioni\PatchManager\Tests;
 
-use Cypress\PatchManager\MatchedPatchOperation;
-use Cypress\PatchManager\Tests\FakeObjects\SubjectA;
 use PHPUnit\Framework\Attributes\Test;
+use PrimaAssicurazioni\PatchManager\MatchedPatchOperation;
+use PrimaAssicurazioni\PatchManager\Tests\FakeObjects\SubjectA;
 use Prophecy\Argument;
 
 class MatchedPatchOperationTest extends PatchManagerTestCase

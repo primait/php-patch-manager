@@ -2,10 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Cypress\PatchManager;
+namespace PrimaAssicurazioni\PatchManager;
 
-use Cypress\PatchManager\Request\Operations;
+use PhpCollection\AbstractSequence;
 use PhpCollection\Sequence;
+use PrimaAssicurazioni\PatchManager\Request\Operations;
 
 /**
  * Match the correct handlers based on actual operations
@@ -63,7 +64,7 @@ class OperationMatcher
      * @throws Exception\MissingOperationNameRequest
      * @throws Exception\MissingOperationRequest
      */
-    public function getUnmatchedOperations($subject): Sequence
+    public function getUnmatchedOperations($subject): AbstractSequence
     {
         $matchedOperations = $this->getMatchedOperations($subject);
 

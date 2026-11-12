@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Cypress\PatchManager\Tests;
+namespace PrimaAssicurazioni\PatchManager\Tests;
 
-use Cypress\PatchManager\Patchable as PatchableInterface;
-use Cypress\PatchManager\PatchOperationHandler;
 use Mockery as m;
 use PHPUnit\Framework\TestCase;
+use PrimaAssicurazioni\PatchManager\Patchable as PatchableInterface;
+use PrimaAssicurazioni\PatchManager\PatchOperationHandler;
 use Prophecy\Argument;
 use Prophecy\PhpUnit\ProphecyTrait;
 use Prophecy\Prophecy\ObjectProphecy;

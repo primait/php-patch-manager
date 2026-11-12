@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Cypress\PatchManager;
+namespace PrimaAssicurazioni\PatchManager;
 
-use Cypress\PatchManager\Event\PatchManagerEvent;
-use Cypress\PatchManager\Event\PatchManagerEvents;
-use Cypress\PatchManager\Event\PostHandlerInvocationEvent;
-use Cypress\PatchManager\Event\PreHandlerInvocationEvent;
-use Cypress\PatchManager\Exception\HandlerNotFoundException;
 use PhpCollection\Sequence;
+use PrimaAssicurazioni\PatchManager\Event\PatchManagerEvent;
+use PrimaAssicurazioni\PatchManager\Event\PatchManagerEvents;
+use PrimaAssicurazioni\PatchManager\Event\PostHandlerInvocationEvent;
+use PrimaAssicurazioni\PatchManager\Event\PreHandlerInvocationEvent;
+use PrimaAssicurazioni\PatchManager\Exception\HandlerNotFoundException;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**

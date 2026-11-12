@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace Cypress\PatchManager\Tests\Request;
+namespace PrimaAssicurazioni\PatchManager\Tests\Request;
 
-use Cypress\PatchManager\Exception\InvalidJsonRequestContent;
-use Cypress\PatchManager\Exception\MissingOperationNameRequest;
-use Cypress\PatchManager\Exception\MissingOperationRequest;
-use Cypress\PatchManager\Request\Adapter;
-use Cypress\PatchManager\Request\Operations;
-use Cypress\PatchManager\Tests\PatchManagerTestCase;
 use PHPUnit\Framework\Attributes\Test;
+use PrimaAssicurazioni\PatchManager\Exception\InvalidJsonRequestContent;
+use PrimaAssicurazioni\PatchManager\Exception\MissingOperationNameRequest;
+use PrimaAssicurazioni\PatchManager\Exception\MissingOperationRequest;
+use PrimaAssicurazioni\PatchManager\Request\Adapter;
+use PrimaAssicurazioni\PatchManager\Request\Operations;
+use PrimaAssicurazioni\PatchManager\Tests\PatchManagerTestCase;
 
 class OperationsTest extends PatchManagerTestCase
 {

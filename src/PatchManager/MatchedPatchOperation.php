@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Cypress\PatchManager;
+namespace PrimaAssicurazioni\PatchManager;
 
 use Symfony\Component\OptionsResolver\OptionsResolver;
 

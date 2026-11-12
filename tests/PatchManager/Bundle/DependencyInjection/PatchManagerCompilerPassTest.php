@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Cypress\PatchManager\Tests\Bundle\DependencyInjection;
+namespace PrimaAssicurazioni\PatchManager\Tests\Bundle\DependencyInjection;
 
-use Cypress\PatchManager\Bundle\DependencyInjection\PatchManagerCompilerPass;
-use Cypress\PatchManager\Tests\PatchManagerTestCase;
 use PHPUnit\Framework\Attributes\Test;
+use PrimaAssicurazioni\PatchManager\Bundle\DependencyInjection\PatchManagerCompilerPass;
+use PrimaAssicurazioni\PatchManager\Tests\PatchManagerTestCase;
 use Prophecy\Argument;
 use Prophecy\Prophecy\ObjectProphecy;
 use Symfony\Component\DependencyInjection\ContainerBuilder;

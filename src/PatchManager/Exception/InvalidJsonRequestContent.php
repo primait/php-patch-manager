@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Cypress\PatchManager\Exception;
+namespace PrimaAssicurazioni\PatchManager\Exception;
 
 class InvalidJsonRequestContent extends PatchManagerException
 {

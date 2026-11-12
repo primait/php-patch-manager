@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Cypress\PatchManager\Tests\Bundle;
+namespace PrimaAssicurazioni\PatchManager\Tests\Bundle;
 
-use Cypress\PatchManager\Bundle\DependencyInjection\PatchManagerCompilerPass;
-use Cypress\PatchManager\Bundle\PatchManagerBundle;
-use Cypress\PatchManager\PatchOperationHandler;
-use Cypress\PatchManager\Tests\PatchManagerTestCase;
 use PHPUnit\Framework\Attributes\Test;
+use PrimaAssicurazioni\PatchManager\Bundle\DependencyInjection\PatchManagerCompilerPass;
+use PrimaAssicurazioni\PatchManager\Bundle\PatchManagerBundle;
+use PrimaAssicurazioni\PatchManager\PatchOperationHandler;
+use PrimaAssicurazioni\PatchManager\Tests\PatchManagerTestCase;
 use Symfony\Component\DependencyInjection\ChildDefinition;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 

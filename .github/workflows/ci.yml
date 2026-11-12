@@ -44,7 +44,7 @@ jobs:
 
       - name: Cache Composer packages
         id: composer-cache-restore
-        uses: actions/cache@v3
+        uses: actions/cache@v6
         with:
           path: ${{ steps.composer-cache-dir.outputs.dir }}
           key: ${{ runner.os }}-composer-${{ matrix.php.composer_flags }}-${{ hashFiles('**/composer.json') }}

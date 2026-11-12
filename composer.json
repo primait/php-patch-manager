@@ -56,6 +56,7 @@
         "analyse": "vendor/bin/phpstan analyse -c phpstan.neon --ansi",
         "format": "vendor/bin/php-cs-fixer fix --show-progress=dots --verbose --diff",
         "format-dry-run": "vendor/bin/php-cs-fixer fix --dry-run --show-progress=dots --verbose --diff",
-        "test": "vendor/bin/phpunit"
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-text --coverage-clover clover.xml"
     }
 }

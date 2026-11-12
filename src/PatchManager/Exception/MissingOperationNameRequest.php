@@ -6,6 +6,9 @@ namespace PrimaAssicurazioni\PatchManager\Exception;
 
 class MissingOperationNameRequest extends PatchManagerException
 {
+    /**
+     * @param array<string, mixed> $operationData
+     */
     public function __construct(array $operationData)
     {
         $message = "You passed an operation without a name to the PatchManager. The json should contains

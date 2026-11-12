@@ -29,6 +29,9 @@ class OperationData extends Map
         return $operationData;
     }
 
+    /**
+     * @param list<string> $keys
+     */
     public function diffKeys(array $keys): Sequence
     {
         $filtered = array_filter(

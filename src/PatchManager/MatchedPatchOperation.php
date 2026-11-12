@@ -8,16 +8,23 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class MatchedPatchOperation
 {
+    /** @var array<string, mixed> */
     private array $operationData;
 
     private PatchOperationHandler $handler;
 
+    /**
+     * @param array<string, mixed> $operationData
+     */
     private function __construct(array $operationData, PatchOperationHandler $handler)
     {
         $this->operationData = $operationData;
         $this->handler = $handler;
     }
 
+    /**
+     * @param array<string, mixed> $operationData
+     */
     public static function create(array $operationData, PatchOperationHandler $handler): MatchedPatchOperation
     {
         return new self($operationData, $handler);

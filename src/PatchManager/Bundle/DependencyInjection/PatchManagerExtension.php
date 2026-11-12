@@ -15,7 +15,7 @@ class PatchManagerExtension extends Extension
     /**
      * Loads a specific configuration.
      *
-     * @param array $configs An array of configuration values
+     * @param array<string, mixed> $configs An array of configuration values
      * @param ContainerBuilder $container A ContainerBuilder instance
      *
      * @throws \InvalidArgumentException When provided tag is not defined in this extension
@@ -37,6 +37,9 @@ class PatchManagerExtension extends Extension
         $this->handleGenericConfig($config, $container, $loaderHandlers);
     }
 
+    /**
+     * @param array<string, mixed> $config
+     */
     private function handleGenericConfig(
         array $config,
         ContainerBuilder $container,

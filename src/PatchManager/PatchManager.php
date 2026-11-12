@@ -38,7 +38,7 @@ class PatchManager
     }
 
     /**
-     * @param iterable|Patchable $subject a Patchable instance or a collection of instances
+     * @param iterable<Patchable>|Patchable $subject a Patchable instance or a collection of instances
      * @throws Exception\InvalidJsonRequestContent
      * @throws Exception\MissingOperationNameRequest
      * @throws Exception\MissingOperationRequest
@@ -91,7 +91,7 @@ class PatchManager
     }
 
     /**
-     * @param array|Patchable|\Traversable $subject a Patchable instance or a collection of instances
+     * @param iterable<Patchable>|Patchable $subject a Patchable instance or a collection of instances
      * @throws Exception\InvalidJsonRequestContent
      * @throws Exception\MissingOperationNameRequest
      * @throws Exception\MissingOperationRequest
@@ -108,7 +108,7 @@ class PatchManager
     }
 
     /**
-     * @param iterable|Patchable $subject a Patchable instance or a collection of instances
+     * @param iterable<Patchable>|Patchable $subject a Patchable instance or a collection of instances
      * @throws Exception\MissingOperationNameRequest
      * @throws Exception\MissingOperationRequest
      * @throws Exception\InvalidJsonRequestContent

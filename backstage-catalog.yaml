@@ -1,0 +1,16 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: "php-patch-manager"
+  description: "A Symfony bundle to manage patch requests"
+  tags:
+    - php
+  links:
+    - url: https://github.com/primait/php-patch-manager
+      icon: github
+      title: github repository
+spec:
+  type: "library"
+  lifecycle: production
+  owner: "group:default/team-policy-operations-italy"
+  system: prima.it

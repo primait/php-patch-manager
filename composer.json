@@ -58,5 +58,11 @@
         "format-dry-run": "vendor/bin/php-cs-fixer fix --dry-run --show-progress=dots --verbose --diff",
         "test": "vendor/bin/phpunit",
         "test-coverage": "vendor/bin/phpunit --coverage-text --coverage-clover clover.xml"
-    }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/primait/php-collection"
+        }
+    ]
 }
